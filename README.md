@@ -1,4 +1,4 @@
-# Milestone 1 - APP_NAME_HERE (Unit 7)
+# Milestone 1 - Exerciser (Unit 7)
 
 ## Table of Contents
 
@@ -10,17 +10,17 @@
 
 ### Description
 
-[Description of your app]
+Exerciser is a mobile app game that is meant to promotes health and entertainment. The user is to walk around their areas to defeat enemies in the app and earn rewards, allowing for a friendly and heroic environment for those who wish to improve their physical health while enjoying their time doing so.
 
 ### App Evaluation
 
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Health and Entertainment
+- **Mobile:** Uses mobile location to track the position of users device and to asist in step count tracking.
+- **Story:** Allows user to play a game while they are working on their physical health.
+- **Market:** Users looking for a chance to add light excerise of walking to their day while also wanting something to bring entertainment on that walk.
+- **Habit:** Users can use the app at anytime. After defeating enemies of the game users are rewarded in-game currency, that can be spent on in-game rewards. Users can create and edit their profile.
+- **Scope:** V1 would allow the user icon to move around on a map based off of their devices phyical location. V2 would allow profile customisation and randomised battle locations that are activated when the users device location is near the battle , as well as a in-app steps counter. V3 would allow rewards and coins for the user after battles(implimentation of in-game currency) and a small in-game store to spend coins, and a health tip section to assist users on their technics. V4 would have a timer for break reminds so users don't overwork themselves. (other customisation additions or social additions possibly but not focused)
 
 ## Product Spec
 
