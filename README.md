@@ -42,12 +42,22 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
 
 ### 2. Screen Archetypes
 
-- [list first screen here]
-  - [list associated required story here]
-  - ...
-- [list second screen here]
-  - [list associated required story here]
-  - ...
+- User Login
+  - Users can enter their info into this screen to access their account. 
+  - Will take username and password. 
+- Map Screen
+  - Will use geolocation to track user location. 
+  - When walking, users will encounter generated monsters.
+  - When using this screen, step counting feature will be engaged.
+  - When encountering monsters, users will be taken to battle screen. 
+- Battle Screen
+  - 
+- Store Screen
+  - Using coins earned from battle, users can buy items in the store.
+  - These items may include game cosmetics, exorcism items, and more.
+  - Items will be shown in inventory. 
+- Inventory
+  - Will contain items purchased from store.
 
 ### 3. Navigation
 
