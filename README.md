@@ -29,14 +29,16 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
 **Required Features**
 
 1. GPS Geolocation Tracking
-2. ...
-3. ...
+2. Monster Generation
+3. Battle Monsters
+4. Step Tracker
 
 **Optional Features**
 
-1. [fill in your optional user features here]
-2. ...
-3. ...
+1. Counter of all monsters 
+2. Earn currency from monsters
+3. Store Setup to use currency
+4. Health Tips
 
 ### 2. Screen Archetypes
 
