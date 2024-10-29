@@ -28,7 +28,7 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
 
 **Required Features**
 
-1. [fill in your required user features here]
+1. GPS Geolocation Tracking
 2. ...
 3. ...
 
