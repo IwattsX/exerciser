@@ -63,18 +63,18 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Map Screen Navigation
+* Inventory Screen Navigation
+* Store Screen Navigation
 
 **Flow Navigation** (Screen to Screen)
 
-- [list first screen here]
-  - [list screen navigation here]
-  - ...
-- [list second screen here]
-  - [list screen navigation here]
-  - ...
+- Login Screen. User enters details and it takes them to map screen. 
+  - Map screen will be the homepage of the app. This will show the users location and movement. 
+    - Battle screen will appear when user enteracts with a monster sprite on the map.  
+- When pressing inventory tab navigation, Inventory will show purchased items and current amount of coins from exorcisms. 
+- When pressing store tab navigation, Store screen will show items available for purchase. 
+
 
 ## Wireframes
 
