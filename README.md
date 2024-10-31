@@ -51,7 +51,9 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
   - When using this screen, step counting feature will be engaged.
   - When encountering monsters, users will be taken to battle screen. 
 - Battle Screen
-  - 
+  - Will show sprite of monster you are battling.
+  - Under sprite, details of monster will be displayed. 
+  - User can use different spell books to defeat monster. 
 - Store Screen
   - Using coins earned from battle, users can buy items in the store.
   - These items may include game cosmetics, exorcism items, and more.
