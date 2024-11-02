@@ -79,8 +79,7 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
 
 
 ## Wireframes
-
-[Add picture of your hand sketched wireframes in this section] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="./Wireframes_exerciser.jpg" width=600 style="transform: rotate(-90deg);">
 
 <br>
 
@@ -103,7 +102,7 @@ this section]
 ## Issue cards
 
 - [Add screenshot of your Project Board with the issues that you've been working on for this unit's milestone] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-- [Add screenshot of your Project Board with the issues that you're working on in the **NEXT sprint**. It should include issues for next unit with assigned owners.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+- [Add screenshot of your Project Board with the issues that you're working on in the **NEXT sprint**. It should include issues for next unit with assigned owners.] <img src="YOUR_WIREFRAME_IMAGE_URL">
 
 ## Issues worked on this sprint
 
