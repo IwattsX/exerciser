@@ -79,7 +79,7 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
 
 
 ## Wireframes
-<img src="./Wireframes_exerciser.jpg" width=600 style="transform: rotate(-90deg);">
+<img src="./Wireframes_exerciser.png" width=600 style="transform: rotate(-90deg);">
 
 <br>
 
