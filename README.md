@@ -51,7 +51,9 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
   - When using this screen, step counting feature will be engaged.
   - When encountering monsters, users will be taken to battle screen. 
 - Battle Screen
-  - 
+  - Will show sprite of monster you are battling.
+  - Under sprite, details of monster will be displayed. 
+  - User can use different spell books to defeat monster. 
 - Store Screen
   - Using coins earned from battle, users can buy items in the store.
   - These items may include game cosmetics, exorcism items, and more.
@@ -63,22 +65,21 @@ Exerciser is a mobile app game that is meant to promotes health and entertainmen
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Map Screen Navigation
+* Inventory Screen Navigation
+* Store Screen Navigation
 
 **Flow Navigation** (Screen to Screen)
 
-- [list first screen here]
-  - [list screen navigation here]
-  - ...
-- [list second screen here]
-  - [list screen navigation here]
-  - ...
+- Login Screen. User enters details and it takes them to map screen. 
+  - Map screen will be the homepage of the app. This will show the users location and movement. 
+    - Battle screen will appear when user enteracts with a monster sprite on the map.  
+- When pressing inventory tab navigation, Inventory will show purchased items and current amount of coins from exorcisms. 
+- When pressing store tab navigation, Store screen will show items available for purchase. 
+
 
 ## Wireframes
-
-[Add picture of your hand sketched wireframes in this section] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="./Wireframes_exerciser.png" width=600>
 
 <br>
 
@@ -101,7 +102,7 @@ this section]
 ## Issue cards
 
 - [Add screenshot of your Project Board with the issues that you've been working on for this unit's milestone] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-- [Add screenshot of your Project Board with the issues that you're working on in the **NEXT sprint**. It should include issues for next unit with assigned owners.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+- [Add screenshot of your Project Board with the issues that you're working on in the **NEXT sprint**. It should include issues for next unit with assigned owners.] <img src="YOUR_WIREFRAME_IMAGE_URL">
 
 ## Issues worked on this sprint
 
