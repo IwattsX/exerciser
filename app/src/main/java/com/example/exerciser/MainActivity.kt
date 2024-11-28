@@ -1,11 +1,11 @@
 package com.example.exerciser
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +15,10 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
-class MainActivity : AppCompatActivity() {
+
+
+
+class MainActivity : AppCompatActivity(){
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,14 +31,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val textView : TextView = findViewById<TextView>(R.id.mainText)
+        mapScreen()
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location : Location? ->
                 // Got last known location. In some rare situations this can be null.
                 Log.v("location of phone", location.toString())
-                textView.text = location.toString()
             }
 
         val locationPermissionRequest = registerForActivityResult(
@@ -70,4 +73,11 @@ class MainActivity : AppCompatActivity() {
             ))
         }
     }
+
+    private fun mapScreen() {
+        val mapsIntent = Intent(this, MapsActivity::class.java)
+        startActivity(mapsIntent)
+    }
+
+
 }
