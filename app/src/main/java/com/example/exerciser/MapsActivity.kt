@@ -5,6 +5,8 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -18,7 +20,11 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.exerciser.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.Priority
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -43,10 +49,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         ) { permissions ->
             when {
                 permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
-                    getLastKnownLocation()
+                    fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+                    getUpdatedLocations()
                 }
                 permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
-                    getLastKnownLocation()
+                    fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+                    getUpdatedLocations()
                 }
                 else -> {
                     // Inform the user that location permissions are necessary
@@ -63,9 +71,58 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     Manifest.permission.ACCESS_COARSE_LOCATION
                 )
             )
+            // TODO: get the results of this and then call getLastKnownLocation
         } else {
-            getLastKnownLocation()
+            // getLastKnownLocation()
+            fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+            getUpdatedLocations()
         }
+    }
+    private val locationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            Log.v("Location callback called", "Location updated now is location not null")
+
+            for (location in locationResult.locations) {
+
+                if (location != null) {
+                    latitude = location.latitude
+                    longitude = location.longitude
+
+                    val pos = LatLng(latitude, longitude)
+                    mMap.addMarker(MarkerOptions().position(pos).title("You"))
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 15f))
+                }
+            }
+        }
+    }
+    private fun getUpdatedLocations(){
+        Log.v("Update location", "Location getting updated")
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+
+        fusedLocationClient.requestLocationUpdates(createLocationRequest(), locationCallback, Looper.getMainLooper())
+
+    }
+
+    private fun createLocationRequest(): LocationRequest {
+        return LocationRequest
+            .Builder(Priority.PRIORITY_HIGH_ACCURACY, 5 * 1000)
+            .build()
     }
 
     private fun getLastKnownLocation() {
@@ -84,7 +141,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+//            // for ActivityCompat#requestPermissions for more details.
+//            requestPermissions(
+//                arrayOf(
+//                    android.Manifest.permission.ACCESS_COARSE_LOCATION,
+//                    android.Manifest.permission.ACCESS_COARSE_LOCATION
+//                ), 0 // REQUEST_CODE
+//            )
             return
         }
         fusedLocationClient.lastLocation
