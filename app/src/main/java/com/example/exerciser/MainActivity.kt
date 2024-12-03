@@ -29,17 +29,18 @@ class MainActivity : AppCompatActivity(){
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_navigation_map -> {
-                    // Handle home tab click
+                    // Handle map tab click
                     mapScreen()
+
                     true
                 }
                 R.id.bottom_navigation_inventory -> {
-                    // Handle search tab click
+                    // Handle inventory tab click
                     openInventoryScreen()
                     true
                 }
                 R.id.bottom_navigation_step_counter -> {
-                    // Handle profile tab click
+                    // Handle step tab click
                     stepCounterScreen()
                     true
                 }
