@@ -119,7 +119,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
                     val pos = LatLng(latitude, longitude)
                     mMap.addMarker(MarkerOptions().position(pos).title("You"))
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 15f))
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 25f))
                 }
             }
         }
