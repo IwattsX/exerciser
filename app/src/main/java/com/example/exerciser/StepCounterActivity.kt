@@ -1,6 +1,7 @@
 package com.example.exerciser
 
 import android.content.Context
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -10,6 +11,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class StepCounterActivity : AppCompatActivity(), SensorEventListener {
     private var running = false
@@ -33,6 +35,32 @@ class StepCounterActivity : AppCompatActivity(), SensorEventListener {
 
         // Load the previous total steps if available (e.g., from SharedPreferences)
         loadPreviousTotalSteps()
+
+        val bottomNavigationView = findViewById <BottomNavigationView> (R.id.bottom_navigation)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_navigation_map -> {
+                    // Handle home tab click
+                    mapScreen()
+                    true
+                }
+                R.id.bottom_navigation_inventory -> {
+                    // Handle search tab click
+                    true
+                }
+                R.id.bottom_navigation_step_counter -> {
+                    // Handle profile tab click
+                    stepCounterScreen()
+                    true
+                }
+
+                // ... other tab handlers
+                else -> {
+                    // Handle other cases
+                    true
+                }
+            }
+        }
     }
 
     override fun onResume() {
@@ -117,6 +145,16 @@ class StepCounterActivity : AppCompatActivity(), SensorEventListener {
         super.onStop()
         // Save the current cumulative steps when the app stops
         savePreviousTotalSteps()
+    }
+
+    private fun mapScreen() {
+        val mapsIntent = Intent(this, MapsActivity::class.java)
+        startActivity(mapsIntent)
+    }
+
+    private fun stepCounterScreen(){
+        val stepCounterIntent = Intent(this, StepCounterActivity::class.java)
+        startActivity(stepCounterIntent)
     }
 }
 
