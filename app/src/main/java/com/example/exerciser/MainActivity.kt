@@ -44,11 +44,17 @@ class MainActivity : AppCompatActivity(){
                 }
             }
         }
+
     }
 
     private fun mapScreen() {
         val mapsIntent = Intent(this, MapsActivity::class.java)
         startActivity(mapsIntent)
+    }
+
+    private fun stepCounterScreen(){
+        val stepCounterIntent = Intent(this, StepCounterActivity::class.java)
+        startActivity(stepCounterIntent)
     }
 
 
