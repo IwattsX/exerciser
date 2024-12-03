@@ -8,6 +8,11 @@
     <item android:title="Map"
         android:icon="@drawable/navigation_icon_map"
         android:id="@+id/bottom_navigation_map"/>
+
+    <item android:title="Step Counter"
+        android:icon="@drawable/baseline_do_not_step_24"
+        android:id="@+id/bottom_navigation_step_counter"/>
+
     <item android:title="Shop"
         android:icon="@drawable/navigation_icon_shop"
         android:id="@+id/bottom_navigation_shop"/>

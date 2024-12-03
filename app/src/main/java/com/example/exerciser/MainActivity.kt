@@ -37,6 +37,12 @@ class MainActivity : AppCompatActivity(){
                     // Handle search tab click
                     true
                 }
+                R.id.bottom_navigation_step_counter -> {
+                    // Handle profile tab click
+                    stepCounterScreen()
+                    true
+                }
+
                 // ... other tab handlers
                 else -> {
                     // Handle other cases

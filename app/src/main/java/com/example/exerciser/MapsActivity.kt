@@ -1,6 +1,7 @@
 package com.example.exerciser
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,7 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -77,6 +79,33 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
             getUpdatedLocations()
         }
+
+        val bottomNavigationView = findViewById <BottomNavigationView> (R.id.bottom_navigation)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_navigation_map -> {
+                    // Handle home tab click
+                    mapScreen()
+                    true
+                }
+                R.id.bottom_navigation_inventory -> {
+                    // Handle search tab click
+                    true
+                }
+                R.id.bottom_navigation_step_counter -> {
+                    // Handle profile tab click
+                    stepCounterScreen()
+                    true
+                }
+
+                // ... other tab handlers
+                else -> {
+                    // Handle other cases
+                    true
+                }
+            }
+        }
+
     }
     private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
@@ -166,5 +195,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+    }
+
+    private fun mapScreen() {
+        val mapsIntent = Intent(this, MapsActivity::class.java)
+        startActivity(mapsIntent)
+    }
+
+    private fun stepCounterScreen(){
+        val stepCounterIntent = Intent(this, StepCounterActivity::class.java)
+        startActivity(stepCounterIntent)
     }
 }
