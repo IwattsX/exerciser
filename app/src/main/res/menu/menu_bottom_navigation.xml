@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Inventory"
+    <item android:tooltipText="Inventory"
         android:icon="@drawable/navigation_icon_inventory"
-        android:id="@+id/bottom_navigation_inventory" />
-    <item android:title="Map"
+        android:id="@+id/bottom_navigation_inventory"
+        tools:ignore="MenuTitle" />
+
+    <item android:tooltipText="Map"
         android:icon="@drawable/navigation_icon_map"
-        android:id="@+id/bottom_navigation_map"/>
+        android:id="@+id/bottom_navigation_map"
+        tools:ignore="MenuTitle" />
 
-    <item android:title="Step Counter"
+    <item android:tooltipText="Step Counter"
         android:icon="@drawable/baseline_do_not_step_24"
-        android:id="@+id/bottom_navigation_step_counter"/>
+        android:id="@+id/bottom_navigation_step_counter"
+        tools:ignore="MenuTitle" />
 
-    <item android:title="Shop"
+    <item android:tooltipText="Shop"
         android:icon="@drawable/navigation_icon_shop"
-        android:id="@+id/bottom_navigation_shop"/>
+        android:id="@+id/bottom_navigation_shop"
+        tools:ignore="MenuTitle" />
 
 </menu>
