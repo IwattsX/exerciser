@@ -7,62 +7,108 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 
 class StepCounterActivity : AppCompatActivity(), SensorEventListener {
+    private var running = false
 
-    // SensorManager for managing the step counter sensor
     private var sensorManager: SensorManager? = null
 
-    // Tracks the total number of steps
-    private var totalSteps = 0f
+    private var stepCount = 0
+    private var previousMagnitude = 0f
 
-    // TextView to display the step count
     private lateinit var stepTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_step_counter)
 
-        // Initialize the TextView
         stepTextView = findViewById(R.id.stepCount)
 
-        // Initialize SensorManager
-        stepTextView.text = "$totalSteps"
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+
+        // Load the previous total steps if available (e.g., from SharedPreferences)
+        loadPreviousTotalSteps()
     }
 
     override fun onResume() {
         super.onResume()
+        running = true
 
-        // Get the step counter sensor
-        val stepSensor = sensorManager?.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
+        val stepSensor = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
         if (stepSensor == null) {
-            // Display a message if the sensor is not available
-            Toast.makeText(this, "No step counter sensor available on this device", Toast.LENGTH_SHORT).show()
+            Log.e("StepCounter", "Step counter sensor not available")
+            Toast.makeText(this, "No step counter sensor available", Toast.LENGTH_SHORT).show()
         } else {
-            // Register the sensor listener
-            sensorManager?.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_UI)
+            val isRegistered = sensorManager?.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL) ?: false
+            if (!isRegistered) {
+                Log.e("StepCounter", "Failed to register step sensor listener")
+                Toast.makeText(this, "Could not register step counter sensor", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Step counter sensor registered", Toast.LENGTH_SHORT).show()
+            }
         }
+
     }
 
     override fun onPause() {
         super.onPause()
-        // Unregister the sensor listener when the activity is not visible
+        running = false
         sensorManager?.unregisterListener(this)
     }
 
+
     override fun onSensorChanged(event: SensorEvent?) {
-        if (event?.sensor?.type == Sensor.TYPE_STEP_COUNTER) {
-            // Update the step count
-            totalSteps = event.values[0]
-            stepTextView.text = totalSteps.toInt().toString()
+        if (running) {
+            if (event != null) {
+                // Get the total steps from the sensor
+                val x_axis = event.values[0]
+                val y_axis = event.values[1]
+                val z_axis = event.values[2]
+
+                // Calculate the magnitude of the acceleration vector
+                val magnitude = Math.sqrt((x_axis * x_axis + y_axis * y_axis + z_axis * z_axis).toDouble()).toFloat()
+                val magnitudeDelta = magnitude - previousMagnitude
+
+                if (magnitudeDelta > 10) {
+                    stepCount++
+                    stepTextView.text = stepCount.toString()
+                }
+
+
+            } else {
+               Toast.makeText(this, "Event for sensor is null, can't update steps", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+
+    // ... onAccuracyChanged() ...
+
+    private fun loadPreviousTotalSteps() {
+        val sharedPreferences = getSharedPreferences("stepCounterPrefs", Context.MODE_PRIVATE)
+        val previousTotalSteps = sharedPreferences.getFloat("previousTotalSteps", 0f)
+        stepCount = previousTotalSteps.toInt() // Initialize cumulative steps
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
         // No action needed for accuracy changes
     }
+
+
+    private fun savePreviousTotalSteps() {
+        val sharedPreferences = getSharedPreferences("stepCounterPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putFloat("previousTotalSteps", stepCount.toFloat())
+        editor.apply()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Save the current cumulative steps when the app stops
+        savePreviousTotalSteps()
+    }
 }
+
