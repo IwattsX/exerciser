@@ -6,7 +6,7 @@
         android:icon="@drawable/navigation_icon_inventory"
         android:id="@+id/bottom_navigation_inventory"/>
     <item android:title="Map"
-        android:icon="@drawable/navigation_icon_shop"
+        android:icon="@drawable/navigation_icon_map"
         android:id="@+id/bottom_navigation_map"/>
     <item android:title="Shop"
         android:icon="@drawable/navigation_icon_shop"
