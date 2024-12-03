@@ -4,7 +4,7 @@
 
     <item android:title="Inventory"
         android:icon="@drawable/navigation_icon_inventory"
-        android:id="@+id/bottom_navigation_inventory"/>
+        android:id="@+id/bottom_navigation_inventory" />
     <item android:title="Map"
         android:icon="@drawable/navigation_icon_map"
         android:id="@+id/bottom_navigation_map"/>
