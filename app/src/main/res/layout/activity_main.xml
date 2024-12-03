@@ -17,5 +17,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu_bottom_navigation"
          />
+<!--    profile_nav-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
