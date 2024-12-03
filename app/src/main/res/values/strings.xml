@@ -1,6 +1,35 @@
 <resources>
-    <string name="app_name">exerciser</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- App Name -->
+    <string name="app_name">Exerciser</string>
+
+    <!-- Button Labels -->
+    <string name="start_button">Start</string>
+    <string name="stop_button">Stop</string>
+    <string name="reset_button">Reset</string>
+    <string name="settings_button">Settings</string>
+    <string name="profile_button">Profile</string>
+
+    <!-- Tooltips/Descriptions for Buttons -->
+    <string name="start_button_desc">Start the exercise session</string>
+    <string name="stop_button_desc">Stop the exercise session</string>
+    <string name="reset_button_desc">Reset the exercise session</string>
+    <string name="settings_button_desc">Go to settings</string>
+    <string name="profile_button_desc">Go to profile</string>
+
+    <!-- Icon Descriptions (if needed for accessibility) -->
+    <string name="start_button_icon_desc">Start button icon</string>
+    <string name="stop_button_icon_desc">Stop button icon</string>
+    <string name="reset_button_icon_desc">Reset button icon</string>
+    <string name="settings_button_icon_desc">Settings button icon</string>
+    <string name="profile_button_icon_desc">Profile button icon</string>
+
+    <!-- Navigation Menu (if you have a bottom navigation or toolbar) -->
+    <string name="home_menu_item">Home</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="profile_menu_item">Profile</string>
+
+    <!-- Other Strings for UI elements -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>
+
