@@ -12,26 +12,29 @@
         android:textAlignment="center"
         android:textSize="30dp"
         tools:ignore="MissingConstraints" />
-    <ImageView
-        android:layout_width="41dp"
-        android:layout_height="40dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/temp_icon_profile"
-        tools:ignore="MissingConstraints" />
+<!--    <ImageView-->
+<!--        android:layout_width="41dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:src="@drawable/temp_icon_profile"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
     <!--    inventory display of items-->
-    <TableLayout
-        android:id="@+id/inventoryBag"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="*"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InventoryTitle"
-        app:layout_constraintVertical_bias="0.513">
+        <TableLayout
+            android:id="@+id/inventoryBag"
+            android:layout_width="match_parent"
+            android:layout_height="602dp"
+            android:stretchColumns="*"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/InventoryTitle"
+            app:layout_constraintVertical_bias="0.495">
 
-    </TableLayout>
+
+        </TableLayout>
+
     <!--    bottom_nav-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

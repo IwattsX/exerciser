@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(){
                 // ... other tab handlers
                 else -> {
                     // Handle other cases
-                    false
+                    true
                 }
             }
         }
