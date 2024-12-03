@@ -25,6 +25,15 @@ class MainActivity : AppCompatActivity(){
         }
 
         mapScreen()
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    // Handle home tab click
+                    true
+                }
+                // ... other tab handlers
     }
 
     private fun mapScreen() {
