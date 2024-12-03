@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity(){
                 }
                 R.id.bottom_navigation_inventory -> {
                     // Handle search tab click
+                    openInventoryScreen()
                     true
                 }
                 R.id.bottom_navigation_step_counter -> {
@@ -61,6 +62,11 @@ class MainActivity : AppCompatActivity(){
     private fun stepCounterScreen(){
         val stepCounterIntent = Intent(this, StepCounterActivity::class.java)
         startActivity(stepCounterIntent)
+    }
+
+    private fun openInventoryScreen() {
+        val inventoryIntent = Intent(this, InventoryActivity::class.java)
+        startActivity(inventoryIntent)
     }
 
 
