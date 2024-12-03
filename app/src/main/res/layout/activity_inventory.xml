@@ -11,11 +11,12 @@
         android:textAlignment="center"
         android:textSize="30dp"
         android:layout_width="match_parent"
-        android:layout_height="25pt"/>
+        android:layout_height="25dp"
+        tools:ignore="MissingConstraints" />
 
     <ScrollView
         android:layout_width="409dp"
-        android:layout_height=""
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/InventoryTitle"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,10 +29,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                <TextView
-                    android:title="hi"/>
-                />
+                android:orientation="horizontal" />
         </LinearLayout>
     </ScrollView>
 
