@@ -7,8 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.gms.location.FusedLocationProviderClient
-
-
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity(){
@@ -24,8 +23,28 @@ class MainActivity : AppCompatActivity(){
             insets
         }
 
-        // mapScreen()
-        stepCounterScreen()
+        mapScreen()
+
+        val bottomNavigationView = findViewById <BottomNavigationView> (R.id.bottom_navigation)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_navigation_map -> {
+                    // Handle home tab click
+                    mapScreen()
+                    true
+                }
+                R.id.bottom_navigation_inventory -> {
+                    // Handle search tab click
+                    true
+                }
+                // ... other tab handlers
+                else -> {
+                    // Handle other cases
+                    true
+                }
+            }
+        }
+
     }
 
     private fun mapScreen() {

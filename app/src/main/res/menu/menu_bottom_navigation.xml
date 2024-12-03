@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Inventory"
+        android:icon="@drawable/navigation_icon_inventory"
+        android:id="@+id/bottom_navigation_inventory" />
+    <item android:title="Map"
+        android:icon="@drawable/navigation_icon_map"
+        android:id="@+id/bottom_navigation_map"/>
+    <item android:title="Shop"
+        android:icon="@drawable/navigation_icon_shop"
+        android:id="@+id/bottom_navigation_shop"/>
+
+</menu>
