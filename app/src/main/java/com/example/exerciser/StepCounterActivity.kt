@@ -17,6 +17,8 @@ class StepCounterActivity : AppCompatActivity(), SensorEventListener {
     private var sensorManager: SensorManager? = null
 
     private var stepCount = 0
+
+    private var totalSteps = 0
     private var previousMagnitude = 0f
 
     private lateinit var stepTextView: TextView
@@ -75,7 +77,13 @@ class StepCounterActivity : AppCompatActivity(), SensorEventListener {
 
                 if (magnitudeDelta > 10) {
                     stepCount++
-                    stepTextView.text = stepCount.toString()
+
+                }
+
+                if(stepCount >= 30){
+                    stepCount -= 30
+                    totalSteps++
+                    stepTextView.text = totalSteps.toString()
                 }
 
 
