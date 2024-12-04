@@ -129,5 +129,6 @@ from the original requirements
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ## App Demo Video
+Demo Video:
+[https://youtube.com/shorts/MdB5yXjnDpY ](https://youtube.com/shorts/MdB5yXjnDpY)
 
-- Embed the YouTube/Vimeo link of your Completed Demo Day prep video
