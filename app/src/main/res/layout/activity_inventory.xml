@@ -4,36 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/InventoryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:text="~~Inventory~~"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        tools:ignore="MissingConstraints" />
+<!--    <ImageView-->
+<!--        android:layout_width="41dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:src="@drawable/temp_icon_profile"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/InventoryTitle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        tools:ignore="NotSibling">
-
-        <LinearLayout
+    <!--    inventory display of items-->
+        <TableLayout
+            android:id="@+id/inventoryBag"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="602dp"
+            android:stretchColumns="*"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/InventoryTitle"
+            app:layout_constraintVertical_bias="0.495">
 
-            <TextView
-                android:id="@+id/InventoryTitle"
-                android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:text="~~Inventory~~"
-                android:textAlignment="center"
-                android:textSize="30dp"
-                tools:ignore="MissingConstraints" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" />
-        </LinearLayout>
-    </ScrollView>
+        </TableLayout>
 
     <!--    bottom_nav-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
