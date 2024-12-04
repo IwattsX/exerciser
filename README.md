@@ -117,16 +117,46 @@ this section]
 
 ## GitHub Project board
 
-[Add screenshot of your Project Board with the updated status of issues for Milestone 3. Note that these should include the updated issues you worked on for this sprint and not be a duplicate of Milestone 2 Project board.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+[Add screenshot of your Project Board with the updated status of issues for Milestone 3. Note that these should include the updated issues you worked on for this sprint and not be a duplicate of Milestone 2 Project board.]
 
-## Completed user stories
+![Milestone sprint 2](./MileStonesSprint2.png)
+![Project board](./ProjectBoardSprint2.png)
 
-- List the completed user stories from this unit
-- List any pending user stories / any user stories you decided to cut
-from the original requirements
+## Completed User Stories
 
-[Add video/gif of your current application that shows build progress]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+1. **Step Counter**
+   - *As a fitness app user, I want to track my steps using the accelerometer so that I can monitor my daily activity.*  
+   - **Status**: Completed
+   - **Next Steps**: Make the feature more user-friendly by loading data dynamically.
+
+2. **Map Screen**
+   - *As a user exploring new locations, I want a map screen powered by Google Maps so that I can easily view and navigate the area.*  
+   - **Status**: Completed
+   - **Notes**: The implementation required enabling the Android SDK for Google Maps, which resolved previous issues.
+
+---
+
+## Pending or Deferred User Stories
+
+1. **Inventory Screen**
+   - *As a player, I want an inventory screen to manage my items so that I can prepare for battles or shop interactions.*  
+   - **Status**: Work in progress
+   - **Current State**: Placeholders for items are displayed using a table.
+
+2. **Battle Monsters Screen**
+   - *As a player, I want a battle monsters screen so that I can use items and strategize gameplay during encounters.*  
+   - **Status**: Future plan
+   - **Notes**: This screen will integrate with the inventory system.
+
+3. **Shop Screen**
+   - *As a player, I want a shop screen to buy or sell items so that I can acquire resources for gameplay.*  
+   - **Status**: Deferred
+   - **Notes**: Not implemented but considered for future updates.
+
+<img src="./Demo-StepCounter.gif" width=600>
+
+Video of it running on emulator (since this does track location)
+[https://youtube.com/shorts/MdB5yXjnDpY ](https://youtube.com/shorts/MdB5yXjnDpY)
 
 ## App Demo Video
 Demo Video:
