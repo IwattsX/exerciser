@@ -113,6 +113,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             for (location in locationResult.locations) {
 
+                // clear map of markers before adding new ones
+                mMap.clear()
+
                 if (location != null) {
                     latitude = location.latitude
                     longitude = location.longitude
