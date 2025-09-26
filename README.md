@@ -10,7 +10,7 @@
 
 ### Description
 
-Exerciser is a mobile app game that is meant to promotes health and entertainment. The user is to walk around their areas to defeat enemies in the app and earn rewards, allowing for a friendly and heroic environment for those who wish to improve their physical health while enjoying their time doing so.
+Exerciser is a mobile app game that is meant to promote health and entertainment. The user is to walk around their areas to defeat enemies in the app and earn rewards, allowing for a friendly and heroic environment for those who wish to improve their physical health while enjoying their time doing so.
 
 ### App Evaluation
 
